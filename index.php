@@ -83,6 +83,10 @@
                                     <div class="input-group mb-3">
                                         <input type="text" name="surname" value="" class="form-control" placeholder="" id="" required aria-label="">
                                     </div>
+                                    <label for="photo" class="mb-1" style="color: var(--bs-light);">Photo <span class="text-danger">*</span></label>
+                                    <div class="input-group mb-3">
+                                        <input type="file" name="photo" value="" class="form-control" placeholder="" id="" required aria-label="">
+                                    </div>
                                     <label for="formation1" class="mb-1" style="color: var(--bs-light);">Formation 1<span class="text-danger">*</span></label>
                                     <div class="input-group mb-3">
                                         <input type="text" name="formation1" value="" class="form-control" placeholder="Intitulé de la formation" id="" required aria-label="">

@@ -3,6 +3,7 @@
 $data['name'] = $_GET['name'];
 $data['surname'] = $_GET['surname'];
 $data['job'] = $_GET['job'];
+$data['photo'] = $_GET['photo'];
 $data['date_of_birth'] = $_GET['date_of_birth'];
 $data['address'] = $_GET['address'];
 $data['phone_number'] = $_GET['phone_number'];
@@ -46,8 +47,7 @@ $data['hobby'] = $_GET['hobby'];
             <div class="base">
             <div class="profile">
                 <div class="photo">
-                    <!--<img src="" /> -->
-                    <i class="fas fa-rocket"></i>
+                    <img src="<?php echo $data['photo'];?>" />
                     </div>
                     <div class="info">
                     <h1 class="name"><?php echo $data['name']." ".$data['surname'];?></h1>
@@ -58,7 +58,7 @@ $data['hobby'] = $_GET['hobby'];
                 <h3>About Me</h3>I'm a web designer for Fiserv, specializing in web design, graphic design, and UX. Experienced with the Adobe Creative Suite, responsive design, social media management, and prototyping.
             </div>
             <div class="contact">
-                <h3>Contact Me</h3>
+                <h3>Contact</h3>
                 <div class="call"><a href="tel:123-456-7890"><i class="fas fa-phone"></i><span>123-456-7890</span></a></div>
                 <div class="address"><a href="https://goo.gl/maps/fiTBGT6Vnhy"><i class="fas fa-map-marker"></i><span>Provo, Utah</span></a>
                 </div>
@@ -66,7 +66,7 @@ $data['hobby'] = $_GET['hobby'];
                 <div class="website"><a href="http://astronaomical.com/" target="_blank"> <i class="fas fa-home"></i><span>astronaomical.com</span></a></div>
             </div>
             <div class="follow">
-                <h3>Follow Me</h3>
+                <h3>Suivez-moi</h3>
                 <div class="box">
                 <a href="https://www.facebook.com/astronaomical/" target="_blank"><i class="fab fa-facebook"></i></a>
                 <a href="https://www.instagram.com/astronaomical/" target="_blank"><i class="fab fa-instagram "></i></a>
@@ -95,7 +95,7 @@ $data['hobby'] = $_GET['hobby'];
                 </ul>
             </div>
             <div class="skills-prog">
-                <h3><i class="fas fa-code"></i>Programming Skills</h3>
+                <h3><i class="fas fa-code"></i>Compétence en dev</h3>
                 <ul>
                 <li data-percent="95"><span>HTML5</span>
                     <div class="skills-bar">
@@ -135,7 +135,7 @@ $data['hobby'] = $_GET['hobby'];
                 </ul>
             </div>
             <div class="skills-soft">
-                <h3><i class="fas fa-bezier-curve"></i>Software Skills</h3>
+                <h3><i class="fas fa-bezier-curve"></i>Compétence en logiciel</h3>
                 <ul>
                 <li data-percent="90">
                     <svg viewbox="0 0 100 100">
