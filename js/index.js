@@ -73,3 +73,7 @@
       $(".new_input").prepend('<div class="input-group mb-3"><input type="text" name="formation" value="" class="form-control" placeholder="Intitulé de la formation" id="" required aria-label=""></div><div class="input-group mb-3"><input type="text" name="formation_nom" value="" class="form-control" placeholder="Nom de la formation / Nom de l\'école" id="" required aria-label=""></div><div class="input-group mb-3"><input type="text" name="formation_date" value="" class="form-control" placeholder="Date de la formation" id="" required aria-label=""></div>');
     });
   }); */
+
+  function img_pathUrl(input){
+    $('#img_url')[0].src = (window.URL ? URL : webkitURL).createObjectURL(input.files[0]);
+}

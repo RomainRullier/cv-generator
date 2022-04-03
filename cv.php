@@ -3,12 +3,18 @@
 $data['name'] = $_GET['name'];
 $data['surname'] = $_GET['surname'];
 $data['job'] = $_GET['job'];
+$data['about'] = $_GET['about'];
 $data['photo'] = $_GET['photo'];
-$data['date_of_birth'] = $_GET['date_of_birth'];
 $data['address'] = $_GET['address'];
-$data['phone_number'] = $_GET['phone_number'];
+$data['phone'] = $_GET['phone'];
 $data['email'] = $_GET['email'];
-$data['foreign_language'] = $_GET['foreign_language'];
+$data['website'] = $_GET['website'];
+$data['facebook'] = $_GET['facebook'];
+$data['instagram'] = $_GET['instagram'];
+$data['pinterest'] = $_GET['pinterest'];
+$data['linkedin'] = $_GET['linkedin'];
+$data['codepen'] = $_GET['codepen'];
+$data['behance'] = $_GET['behance'];
 $data['formation1'] = $_GET['formation1'];
 $data['formation_name1'] = $_GET['formation_name1'];
 $data['formation_date1'] = $_GET['formation_date1'];
@@ -18,7 +24,43 @@ $data['formation_date2'] = $_GET['formation_date2'];
 $data['formation3'] = $_GET['formation3'];
 $data['formation_name3'] = $_GET['formation_name3'];
 $data['formation_date3'] = $_GET['formation_date3'];
-$data['hobby'] = $_GET['hobby'];
+$data['experience1'] = $_GET['experience1'];
+$data['experience_name1'] = $_GET['experience_name1'];
+$data['experience_date1'] = $_GET['experience_date1'];
+$data['experience2'] = $_GET['experience2'];
+$data['experience_name2'] = $_GET['experience_name2'];
+$data['experience_date2'] = $_GET['experience_date2'];
+$data['experience3'] = $_GET['experience3'];
+$data['experience_name3'] = $_GET['experience_name3'];
+$data['experience_date3'] = $_GET['experience_date3'];
+$data['hobby1'] = $_GET['hobby1'];
+$data['hobby2'] = $_GET['hobby2'];
+$data['hobby3'] = $_GET['hobby3'];
+$data['hobby4'] = $_GET['hobby4'];
+$data['hobby5'] = $_GET['hobby5'];
+$data['dev1'] = $_GET['dev1'];
+$data['dev2'] = $_GET['dev2'];
+$data['dev3'] = $_GET['dev3'];
+$data['dev4'] = $_GET['dev4'];
+$data['dev5'] = $_GET['dev5'];
+$data['dev6'] = $_GET['dev6'];
+$data['dev7'] = $_GET['dev7'];
+$data['percent_dev1'] = $_GET['percent_dev1'];
+$data['percent_dev2'] = $_GET['percent_dev2'];
+$data['percent_dev3'] = $_GET['percent_dev3'];
+$data['percent_dev4'] = $_GET['percent_dev4'];
+$data['percent_dev5'] = $_GET['percent_dev5'];
+$data['percent_dev6'] = $_GET['percent_dev6'];
+$data['percent_dev7'] = $_GET['percent_dev7'];
+$data['logi1'] = $_GET['logi1'];
+$data['logi2'] = $_GET['logi2'];
+$data['logi3'] = $_GET['logi3'];
+$data['logi4'] = $_GET['logi4'];
+$data['percent_logi1'] = $_GET['percent_logi1'];
+$data['percent_logi2'] = $_GET['percent_logi2'];
+$data['percent_logi3'] = $_GET['percent_logi3'];
+$data['percent_logi4'] = $_GET['percent_logi4'];
+
 
 ?>
 
@@ -47,7 +89,7 @@ $data['hobby'] = $_GET['hobby'];
             <div class="base">
             <div class="profile">
                 <div class="photo">
-                    <img src="<?php echo $data['photo'];?>" />
+                    <img src="<?php echo $data['photo'];?>" id="img_url" />
                     </div>
                     <div class="info">
                     <h1 class="name"><?php echo $data['name']." ".$data['surname'];?></h1>
@@ -55,25 +97,50 @@ $data['hobby'] = $_GET['hobby'];
                 </div>
             </div>
             <div class="about">
-                <h3>About Me</h3>I'm a web designer for Fiserv, specializing in web design, graphic design, and UX. Experienced with the Adobe Creative Suite, responsive design, social media management, and prototyping.
+                <h3>A propos de moi</h3>
+                <?php echo $data['about'];?>
             </div>
             <div class="contact">
-                <h3>Contact</h3>
-                <div class="call"><a href="tel:123-456-7890"><i class="fas fa-phone"></i><span>123-456-7890</span></a></div>
-                <div class="address"><a href="https://goo.gl/maps/fiTBGT6Vnhy"><i class="fas fa-map-marker"></i><span>Provo, Utah</span></a>
+                <h3>Contactez-moi</h3>
+                <div class="call"><a href="tel:<?php echo $data['phone'];?>"><i class="fas fa-phone"></i><span><?php echo $data['phone'];?></span></a></div>
+                <div class="address"><a><i class="fas fa-map-marker"></i><span><?php echo $data['address'];?></span></a>
                 </div>
-                <div class="email"><a href="mailto:astronaomical@gmail.com"><i class="fas fa-envelope"></i><span>astronaomical</span></a></div>
-                <div class="website"><a href="http://astronaomical.com/" target="_blank"> <i class="fas fa-home"></i><span>astronaomical.com</span></a></div>
+                <div class="email"><a href="mailto:<?php echo $data['email'];?>"><i class="fas fa-envelope"></i><span><?php echo $data['email'];?></span></a></div>
+                <div class="website"><a href="<?php echo $data['website'];?>" target="_blank"> <i class="fas fa-home"></i><span><?php echo $data['website'];?></span></a></div>
             </div>
             <div class="follow">
                 <h3>Suivez-moi</h3>
                 <div class="box">
-                <a href="https://www.facebook.com/astronaomical/" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.instagram.com/astronaomical/" target="_blank"><i class="fab fa-instagram "></i></a>
-                <a href="https://www.pinterest.com/astronaomical/" target="_blank"><i class="fab fa-pinterest"></i></a>
-                <a href="https://www.linkedin.com/in/naomi-weatherford-758385112/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://codepen.io/astronaomical/" target="_blank"><i class="fab fa-codepen"></i></a>
-                <a href="https://www.behance.net/astronaomical" target="_blank"><i class="fab fa-behance"></i></a>
+                <?php if(!empty($data['facebook'])): ?>
+                    <a href="<?php echo $data['facebook'];?>" target="_blank"><i class="fab fa-facebook"></i></a>
+                <?php else: ?>
+                    <a href="" style="display:none"></a>
+                <?php endif; ?>
+                <?php if(!empty($data['instagram'])): ?>
+                    <a href="<?php echo $data['instagram'];?>" target="_blank"><i class="fab fa-instagram"></i></a>
+                <?php else: ?>
+                    <a href="" style="display:none"></a>
+                <?php endif; ?>
+                <?php if(!empty($data['pinterest'])): ?>
+                    <a href="<?php echo $data['pinterest'];?>" target="_blank"><i class="fab fa-pinterest"></i></a>
+                <?php else: ?>
+                    <a href="" style="display:none"></a>
+                <?php endif; ?>
+                <?php if(!empty($data['linkedin'])): ?>
+                    <a href="<?php echo $data['linkedin'];?>" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <?php else: ?>
+                    <a href="" style="display:none"></a>
+                <?php endif; ?>
+                <?php if(!empty($data['codepen'])): ?>
+                    <a href="<?php echo $data['codepen'];?>" target="_blank"><i class="fab fa-codepen"></i></a>
+                <?php else: ?>
+                    <a href="" style="display:none"></a>
+                <?php endif; ?>
+                <?php if(!empty($data['behance'])): ?>
+                    <a href="<?php echo $data['behance'];?>" target="_blank"><i class="fab fa-behance"></i></a>
+                <?php else: ?>
+                    <a href="" style="display:none"></a>
+                <?php endif; ?>
                 </div>
             </div>
             </div>
@@ -81,9 +148,9 @@ $data['hobby'] = $_GET['hobby'];
             <div class="work">
                 <h3><i class="fa fa-briefcase"></i>Experience</h3>
                 <ul>
-                <li><span>Technical Consultant -<br>Web Design</span><small>Fiserv</small><small>Apr 2018 - Now</small></li>
-                <li><span>Web Designer</span><small>Lynden</small><small>Jan 2018 - Apr 2018</small></li>
-                <li><span>Intern - Web Design</span><small>Lynden</small><small>Aug 2017 - Dec 2017</small></li>
+                <li><span><?php echo $data['experience1'] ?></span><small><?php echo $data['experience_name1'] ?></small><small><?php echo $data['experience_date1'] ?></small></li>
+                <li><span><?php echo $data['experience2'] ?></span><small><?php echo $data['experience_name2'] ?></small><small><?php echo $data['experience_date2'] ?></small></li>
+                <li><span><?php echo $data['experience3'] ?></span><small><?php echo $data['experience_name3'] ?></small><small><?php echo $data['experience_date3'] ?></small></li>
                 </ul>
             </div>
             <div class="edu">
@@ -97,37 +164,37 @@ $data['hobby'] = $_GET['hobby'];
             <div class="skills-prog">
                 <h3><i class="fas fa-code"></i>Compétence en dev</h3>
                 <ul>
-                <li data-percent="95"><span>HTML5</span>
+                <li data-percent="<?php echo $data['percent_dev1'];?>"><span><?php echo $data['dev1'];?></span>
                     <div class="skills-bar">
                     <div class="bar"></div>
                     </div>
                 </li>
-                <li data-percent="90"><span>CSS3 & SCSS</span>
+                <li data-percent="<?php echo $data['percent_dev2'];?>"><span><?php echo $data['dev2'];?></span>
                     <div class="skills-bar">
                     <div class="bar"></div>
                     </div>
                 </li>
-                <li data-percent="60"><span>JavaScript</span>
+                <li data-percent="<?php echo $data['percent_dev3'];?>"><span><?php echo $data['dev3'];?></span>
                     <div class="skills-bar">
                     <div class="bar"></div>
                     </div>
                 </li>
-                <li data-percent="50"><span>jQuery</span>
+                <li data-percent="<?php echo $data['percent_dev4'];?>"><span><?php echo $data['dev4'];?></span>
                     <div class="skills-bar">
                     <div class="bar"></div>
                     </div>
                 </li>
-                <li data-percent="40"><span>JSON</span>
+                <li data-percent="<?php echo $data['percent_dev5'];?>"><span><?php echo $data['dev5'];?></span>
                     <div class="skills-bar">
                     <div class="bar"></div>
                     </div>
                 </li>
-                <li data-percent="55"><span>PHP</span>
+                <li data-percent="<?php echo $data['percent_dev6'];?>"><span><?php echo $data['dev6'];?></span>
                     <div class="skills-bar">
                     <div class="bar"></div>
                     </div>
                 </li>
-                <li data-percent="40"><span>MySQL</span>
+                <li data-percent="<?php echo $data['percent_dev7'];?>"><span><?php echo $data['dev7'];?></span>
                     <div class="skills-bar">
                     <div class="bar"></div>
                     </div>
@@ -137,40 +204,40 @@ $data['hobby'] = $_GET['hobby'];
             <div class="skills-soft">
                 <h3><i class="fas fa-bezier-curve"></i>Compétence en logiciel</h3>
                 <ul>
-                <li data-percent="90">
+                <li data-percent="<?php echo $data['percent_logi1'];?>">
                     <svg viewbox="0 0 100 100">
                     <circle cx="50" cy="50" r="45"></circle>
                     <circle class="cbar" cx="50" cy="50" r="45"></circle>
-                    </svg><span>Illustrator</span><small></small>
+                    </svg><span><?php echo $data['logi1'];?></span><small></small>
                 </li>
-                <li data-percent="75">
+                <li data-percent="<?php echo $data['percent_logi2'];?>">
                     <svg viewbox="0 0 100 100">
                     <circle cx="50" cy="50" r="45"></circle>
                     <circle class="cbar" cx="50" cy="50" r="45"></circle>
-                    </svg><span>Photoshop</span><small></small>
+                    </svg><span><?php echo $data['logi2'];?></span><small></small>
                 </li>
-                <li data-percent="85">
+                <li data-percent="<?php echo $data['percent_logi3'];?>">
                     <svg viewbox="0 0 100 100">
                     <circle cx="50" cy="50" r="45"></circle>
                     <circle class="cbar" cx="50" cy="50" r="45"></circle>
-                    </svg><span>InDesign</span><small></small>
+                    </svg><span><?php echo $data['logi3'];?></span><small></small>
                 </li>
-                <li data-percent="65">
+                <li data-percent="<?php echo $data['percent_logi4'];?>">
                     <svg viewbox="0 0 100 100">
                     <circle cx="50" cy="50" r="45"></circle>
                     <circle class="cbar" cx="50" cy="50" r="45"></circle>
-                    </svg><span>Dreamweaver</span><small></small>
+                    </svg><span><?php echo $data['logi4'];?></span><small></small>
                 </li>
                 </ul>
             </div>
             <div class="interests">
-                <h3><i class="fas fa-star"></i>Interests</h3>
+                <h3><i class="fas fa-star"></i>Centre d'intérêt</h3>
                 <div class="interests-items">
-                <div class="art"><i class="fas fa-palette"></i><span>Art</span></div>
-                <div class="art"><i class="fas fa-book"></i><span>Books</span></div>
-                <div class="movies"><i class="fas fa-film"></i><span>Movies</span></div>
-                <div class="music"><i class="fas fa-headphones"></i><span>Music</span></div>
-                <div class="games"><i class="fas fa-gamepad"></i><span>Games</span></div>
+                <div class="art"><i class="fas fa-palette"></i><span><?php echo $data['hobby1'];?></span></div>
+                <div class="art"><i class="fas fa-book"></i><span><?php echo $data['hobby2'];?></span></div>
+                <div class="movies"><i class="fas fa-film"></i><span><?php echo $data['hobby3'];?></span></div>
+                <div class="music"><i class="fas fa-headphones"></i><span><?php echo $data['hobby4'];?></span></div>
+                <div class="games"><i class="fas fa-gamepad"></i><span><?php echo $data['hobby5'];?></span></div>
                 </div>
             </div>
             </div>
